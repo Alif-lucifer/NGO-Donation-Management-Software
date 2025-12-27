@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alif.ngodonationmanagementsoftware.LoginController">
+    <children>
+
+        <!-- Title -->
+        <Label alignment="CENTER" layoutX="180.0" layoutY="38.0" prefHeight="40.0" prefWidth="369.0" text="NGO Donation Management" textFill="#2E7D32">
+            <font>
+                <Font name="System Bold" size="24.0" />
+            </font>
+        </Label>
+
+        <!-- User Type -->
+        <Label layoutX="110.0" layoutY="140.0">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+
+        <ComboBox fx:id="userTypeCB" layoutX="110.0" layoutY="165.0" prefWidth="480.0" promptText="Select Company" />
+
+        <!-- Email -->
+        <Label layoutX="110.0" layoutY="215.0" text="Email Address">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+
+        <TextField fx:id="emailField" layoutX="110.0" layoutY="240.0" prefWidth="480.0" promptText="example@gmail.com" />
+
+        <!-- Password -->
+        <Label layoutX="110.0" layoutY="290.0" text="Password">
+            <font>
+                <Font size="14.0" />
+            </font>
+        </Label>
+
+        <PasswordField fx:id="passwordField" layoutX="110.0" layoutY="315.0" prefWidth="480.0" promptText="Enter your password" />
+
+        <!-- Register -->
+        <Label layoutX="110.0" layoutY="360.0" text="New User?" />
+
+        <Button layoutX="180.0" layoutY="356.0" onAction="#registerHereButton" prefWidth="120.0" style="-fx-background-color: #C8E6C9;" text="Register Here" />
+
+        <!-- Forget password -->
+        <Button layoutX="470.0" layoutY="356.0" onAction="#forgetPasswordButton" prefWidth="120.0" style="-fx-background-color: #FFCDD2;" text="Forget Password?" />
+
+        <!-- Login Button -->
+        <Button layoutX="225.0" layoutY="420.0" onAction="#loginButton" prefHeight="45.0" prefWidth="250.0" style="-fx-background-color: #2E7D32; -fx-text-fill: white;" text="LOGIN">
+            <font>
+                <Font size="18.0" />
+            </font>
+        </Button>
+
+    </children>
+
+</AnchorPane>

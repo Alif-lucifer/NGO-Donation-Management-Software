@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="alif.ngodonationmanagementsoftware.CheckTotalDonationController">
+
+    <Label layoutX="200" layoutY="10"
+           style="-fx-font-size: 22px; -fx-text-fill: #2c3e50;"
+           text="Check Total Donation" />
+
+    <TableView fx:id="tableView" layoutX="50" layoutY="50" prefHeight="300" prefWidth="500">
+        <columns>
+            <TableColumn fx:id="nameColumn" prefWidth="120" text="Company Name" />
+            <TableColumn fx:id="donationTimeColumn" prefWidth="120" text="Donation Time" />
+            <TableColumn fx:id="paymentMethodColumn" prefWidth="120" text="Payment Method" />
+            <TableColumn fx:id="donationAmountColumn" prefWidth="120" text="Amount" />
+        </columns>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY"/>
+        </columnResizePolicy>
+    </TableView>
+
+    <Button layoutX="50" layoutY="370" onAction="#showButtonClicked" prefWidth="120" text="Show Donations"/>
+    <Button layoutX="200" layoutY="370" onAction="#totalButtonClicked" prefWidth="120" text="Total Donation"/>
+    <Button layoutX="350" layoutY="370" onAction="#downloadButtonClicked" prefWidth="120" text="Download Audit"/>
+    <Button layoutX="500" layoutY="10" onAction="#backToDashboard" prefWidth="60" text="Back"/>
+</AnchorPane>
+

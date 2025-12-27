@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alif.ngodonationmanagementsoftware.DashboardController">
+    <Label layoutX="182.0" layoutY="23.0" style="-fx-font-size: 22px; -fx-text-fill: #2c3e50;" text="NGO Donation Dashboard" />
+
+    <Button layoutX="210.0" layoutY="133.0" onAction="#checkDonation" prefWidth="200" style="-fx-background-color: #3498db; -fx-text-fill: white;" text="Check Total Donation" />
+
+    <Button layoutX="210.0" layoutY="187.0" onAction="#listNotDonated" prefWidth="200" style="-fx-background-color: #f39c12; -fx-text-fill: white;" text="List Companies Not Donated" />
+
+    <Button layoutX="210.0" layoutY="244.0" onAction="#companyDetails" prefWidth="200" style="-fx-background-color: #9b59b6; -fx-text-fill: white;" text="Companies Details" />
+
+    <Button layoutX="120" layoutY="300" onAction="#backToLogin" prefWidth="100" style="-fx-background-color: #e74c3c; -fx-text-fill: white;" text="Back" />
+
+    <Button layoutX="397.0" layoutY="300.0" onAction="#logout" prefWidth="100" style="-fx-background-color: #34495e; -fx-text-fill: white;" text="Log Out" />
+
+</AnchorPane>
