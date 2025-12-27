@@ -75,16 +75,15 @@ public class NewCompany implements Serializable {
     public String getPaymentMethod() { return paymentMethod; }
 
     // ---------------- SETTERS ----------------
-    public void setDonationAmount(double donationAmount) { this.donationAmount = donationAmount; }
-    public void setDonationTime(String donationTime) { this.donationTime = donationTime; }
-    public void setPaymentMethod(String paymentMethod) { this.paymentMethod = paymentMethod; }
-
     public void setName(String name) { this.name = name; }
     public void setEmail(String email) { this.email = email; }
-    public void setPassword(String password) { this.password = password; }
+    public void setPassword(String password) { this.password = password; } // password update supported
     public void setAddress(String address) { this.address = address; }
     public void setPhone(String phone) { this.phone = phone; }
     public void setType(String type) { this.type = type; }
+    public void setDonationAmount(double donationAmount) { this.donationAmount = donationAmount; }
+    public void setDonationTime(String donationTime) { this.donationTime = donationTime; }
+    public void setPaymentMethod(String paymentMethod) { this.paymentMethod = paymentMethod; }
 
     // ---------------- TO STRING ----------------
     @Override
@@ -92,6 +91,7 @@ public class NewCompany implements Serializable {
         return "NewCompany{" +
                 "name='" + name + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 ", address='" + address + '\'' +
                 ", phone='" + phone + '\'' +
                 ", type='" + type + '\'' +
@@ -101,8 +101,3 @@ public class NewCompany implements Serializable {
                 '}';
     }
 }
-
-
-
-
-

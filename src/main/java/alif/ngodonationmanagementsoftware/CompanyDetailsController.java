@@ -26,8 +26,9 @@ public class CompanyDetailsController {
     @FXML private TableColumn<CompanyDetails, String> typeColumn;
 
     private ObservableList<CompanyDetails> companyList = FXCollections.observableArrayList();
+
     private static final String COMPANY_FILE = "companies.bin";
-    private static final String DETAILS_FILE = "company_details.bin";
+    private static final String DEMO_FILE = "DCompany.bin";
 
     @FXML
     public void initialize() {
@@ -37,18 +38,20 @@ public class CompanyDetailsController {
         typeColumn.setCellValueFactory(cell -> new javafx.beans.property.SimpleStringProperty(cell.getValue().getType()));
     }
 
+    // ===== Show Button =====
     @FXML
     public void showButtonClicked(ActionEvent event) {
         companyList.clear();
+        ArrayList<NewCompany> allCompanies = getAllCompanies();
 
-        for (NewCompany c : getAllCompanies()) {
+        for (NewCompany c : allCompanies) {
             companyList.add(new CompanyDetails(c.getName(), c.getEmail(), c.getPhone(), c.getType()));
         }
 
         tableView.setItems(companyList);
-        saveListToFile(companyList);
     }
 
+    // ===== Download PDF =====
     @FXML
     public void downloadButtonClicked(ActionEvent event) {
         if (companyList.isEmpty()) {
@@ -111,40 +114,29 @@ public class CompanyDetailsController {
         table.addCell(cell);
     }
 
-    private void saveListToFile(ObservableList<CompanyDetails> list) {
-        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DETAILS_FILE))) {
-            oos.writeObject(new ArrayList<>(list));
-        } catch (IOException e) {
-            e.printStackTrace();
-            showAlert("Error", "Failed to save list to file!");
-        }
+    // ===== Back Button =====
+    @FXML
+    public void backButton(ActionEvent event) throws IOException {
+        switchTo("/alif/ngodonationmanagementsoftware/Dashboard.fxml", event);
     }
 
+    // ===== Load all companies (demo + real) =====
     private ArrayList<NewCompany> getAllCompanies() {
         ArrayList<NewCompany> list = new ArrayList<>();
 
-        // Demo companies
-        list.add(new NewCompany("Bashundhara Group", "bashundhara@gmail.com", "", "N/A", "0123456789", "Textile"));
-        list.add(new NewCompany("BEXIMCO Group", "beximco@gmail.com", "", "N/A", "0123456788", "Pharma"));
-        list.add(new NewCompany("Abul Khair Group", "abulkhair@gmail.com", "", "N/A", "0123456787", "Food"));
-        list.add(new NewCompany("Navana Group", "navana@gmail.com", "", "N/A", "0123456786", "Automobile"));
-        list.add(new NewCompany("Ananda Group", "ananda@gmail.com", "", "N/A", "0123456785", "Food"));
-        list.add(new NewCompany("City Group", "city@gmail.com", "", "N/A", "0123456784", "Conglomerate"));
-        list.add(new NewCompany("Square Group", "square@gmail.com", "", "N/A", "0123456783", "Pharma"));
-        list.add(new NewCompany("Akij Group", "akij@gmail.com", "", "N/A", "0123456782", "Textile"));
-        list.add(new NewCompany("PRAN-RFL Group", "pran@gmail.com", "", "N/A", "0123456781", "Food"));
-        list.add(new NewCompany("Grameenphone", "gp@gmail.com", "", "N/A", "0123456780", "Telecom"));
+        // Load demo companies from DCompany.bin if exists
+        list.addAll(readDemoCompanies());
 
-        // Load additional companies from file
+        // Load real companies
         list.addAll(readCompaniesFromFile());
 
         return list;
     }
 
+    // ===== Real companies =====
     private ArrayList<NewCompany> readCompaniesFromFile() {
         File file = new File(COMPANY_FILE);
         if (!file.exists()) return new ArrayList<>();
-
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
             return (ArrayList<NewCompany>) ois.readObject();
         } catch (Exception e) {
@@ -153,16 +145,38 @@ public class CompanyDetailsController {
         }
     }
 
+    // ===== Demo companies =====
+    private ArrayList<NewCompany> readDemoCompanies() {
+        File file = new File(DEMO_FILE);
+        if (!file.exists()) return getDefaultDemoCompanies(); // fallback default demo list
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+            return (ArrayList<NewCompany>) ois.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return getDefaultDemoCompanies();
+        }
+    }
+
+    private ArrayList<NewCompany> getDefaultDemoCompanies() {
+        ArrayList<NewCompany> demo = new ArrayList<>();
+        demo.add(new NewCompany("Bashundhara Group", "bashundhara@gmail.com", "", "N/A", "0123456789", "Textile"));
+        demo.add(new NewCompany("BEXIMCO Group", "beximco@gmail.com", "", "N/A", "0123456788", "Pharma"));
+        demo.add(new NewCompany("Abul Khair Group", "abulkhair@gmail.com", "", "N/A", "0123456787", "Food"));
+        demo.add(new NewCompany("Navana Group", "navana@gmail.com", "", "N/A", "0123456786", "Automobile"));
+        demo.add(new NewCompany("Ananda Group", "ananda@gmail.com", "", "N/A", "0123456785", "Food"));
+        demo.add(new NewCompany("City Group", "city@gmail.com", "", "N/A", "0123456784", "Conglomerate"));
+        demo.add(new NewCompany("Square Group", "square@gmail.com", "", "N/A", "0123456783", "Pharma"));
+        demo.add(new NewCompany("Akij Group", "akij@gmail.com", "", "N/A", "0123456782", "Textile"));
+        demo.add(new NewCompany("PRAN-RFL Group", "pran@gmail.com", "", "N/A", "0123456781", "Food"));
+        demo.add(new NewCompany("Grameenphone", "gp@gmail.com", "", "N/A", "0123456780", "Telecom"));
+        return demo;
+    }
+
     private void showAlert(String title, String msg) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(title);
         alert.setHeaderText(null);
         alert.setContentText(msg);
         alert.showAndWait();
-    }
-
-    @FXML
-    public void backButton(ActionEvent actionEvent) throws IOException {
-        switchTo("/alif/ngodonationmanagementsoftware/Dashboard.fxml", actionEvent);
     }
 }

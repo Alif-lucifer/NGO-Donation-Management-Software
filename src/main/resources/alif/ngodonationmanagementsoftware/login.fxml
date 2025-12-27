@@ -25,7 +25,7 @@
             </font>
         </Label>
 
-        <ComboBox fx:id="userTypeCB" layoutX="110.0" layoutY="165.0" prefWidth="480.0" promptText="Select Company" />
+        <ComboBox fx:id="userTypeCB" layoutX="110.0" layoutY="165.0" prefWidth="480.0" promptText="Select User" />
 
         <!-- Email -->
         <Label layoutX="110.0" layoutY="215.0" text="Email Address">

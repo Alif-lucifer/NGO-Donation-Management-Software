@@ -17,7 +17,7 @@ public class CompanyDashboardController {
     @FXML
     public void donateButton(ActionEvent actionEvent) throws IOException {
         switchTo(
-                "/alif/ngodonationmanagementsoftware/CollectDonation.fxml",
+                "/alif/ngodonationmanagementsoftware/DonateMoney.fxml",
                 actionEvent
         );
     }
@@ -30,13 +30,6 @@ public class CompanyDashboardController {
         );
     }
 
-    @FXML
-    public void companyProfile(ActionEvent actionEvent) throws IOException {
-        switchTo(
-                "/alif/ngodonationmanagementsoftware/CompanyDetails.fxml",
-                actionEvent
-        );
-    }
 
     @FXML
     public void logout(ActionEvent actionEvent) throws IOException {
@@ -50,7 +43,15 @@ public class CompanyDashboardController {
         LoginController.loggedInCompany = null;
 
         switchTo(
-                "/alif/ngodonationmanagementsoftware/Login.fxml",
+                "/alif/ngodonationmanagementsoftware/login.fxml",
+                actionEvent
+        );
+    }
+
+    @FXML
+    public void companyInfo(ActionEvent actionEvent) throws IOException {
+        switchTo(
+                "/alif/ngodonationmanagementsoftware/CompanyProfile.fxml",
                 actionEvent
         );
     }

@@ -24,7 +24,11 @@ public class Login implements Serializable {
 
     @Override
     public String toString() {
-        return companyName;
+        return "Login{" +
+                "email='" + email + '\'' +
+                ", password='" + password + '\'' +
+                ", companyName='" + companyName + '\'' +
+                '}';
     }
 }
 

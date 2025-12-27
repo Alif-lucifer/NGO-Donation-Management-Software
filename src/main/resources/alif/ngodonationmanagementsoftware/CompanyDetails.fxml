@@ -7,26 +7,36 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="alif.ngodonationmanagementsoftware.CompanyDetailsController">
-    <TableView fx:id="tableView" layoutY="90.0" prefHeight="308.0" prefWidth="645.0">
+<AnchorPane prefHeight="450.0" prefWidth="650.0"
+            xmlns="http://javafx.com/javafx/23.0.1"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="alif.ngodonationmanagementsoftware.CompanyDetailsController">
+
+    <Label layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0" text="Company Details">
+        <font>
+            <Font name="System Bold Italic" size="18.0" />
+        </font>
+    </Label>
+
+    <TableView fx:id="tableView" layoutY="60.0" prefHeight="300.0" prefWidth="620.0">
         <columns>
-            <TableColumn fx:id="nameColumn" prefWidth="150" text="Company Name" />
-            <TableColumn fx:id="emailColumn" prefWidth="150" text="Email" />
-            <TableColumn fx:id="phoneColumn" prefWidth="150" text="Phone" />
-            <TableColumn fx:id="typeColumn" prefWidth="150" text="Type" />
+            <TableColumn fx:id="nameColumn" text="Company Name" />
+            <TableColumn fx:id="emailColumn" text="Email" />
+            <TableColumn fx:id="phoneColumn" text="Phone" />
+            <TableColumn fx:id="typeColumn" text="Type" />
         </columns>
-      <columnResizePolicy>
-         <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-      </columnResizePolicy>
+        <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+        </columnResizePolicy>
     </TableView>
 
-    <Button layoutX="148.0" layoutY="407.0" onAction="#showButtonClicked" text="Show" />
-    <Button layoutX="366.0" layoutY="407.0" onAction="#downloadButtonClicked" text="Download" />
-   <Label layoutX="14.0" layoutY="28.0" prefHeight="40.0" prefWidth="157.0" text="Company Details">
-      <font>
-         <Font name="System Bold Italic" size="18.0" />
-      </font>
-   </Label>
-   <Button layoutX="569.0" layoutY="35.0" mnemonicParsing="false" onAction="#backButton" text="Back" />
+    <Button layoutX="150.0" layoutY="380.0" mnemonicParsing="false"
+            text="Show" onAction="#showButtonClicked" />
+
+    <Button layoutX="350.0" layoutY="380.0" mnemonicParsing="false"
+            text="Download" onAction="#downloadButtonClicked" />
+
+    <Button layoutX="560.0" layoutY="15.0" mnemonicParsing="false"
+            text="Back" onAction="#backButton" />
 
 </AnchorPane>

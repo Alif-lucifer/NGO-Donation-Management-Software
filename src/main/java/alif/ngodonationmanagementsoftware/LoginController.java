@@ -22,21 +22,26 @@ public class LoginController {
     @javafx.fxml.FXML
     private PasswordField passwordField;
 
-    // store logged-in user globally
     public static String loggedInCompany;
-
-    // company login list
     private final ArrayList<Login> companies = new ArrayList<>();
 
     private static final String FILE_NAME = "companies.bin";
+    private static final String D_PASSWORD_FILE = "DPassword.bin"; // demo passwords
+    private static final String A_PASSWORD_FILE = "APassword.bin"; // admin password
 
     // -------- NGO ADMIN CREDENTIALS --------
     private static final String ADMIN_NAME = "NGO Admin";
     private static final String ADMIN_EMAIL = "admin@gmail.org";
-    private static final String ADMIN_PASSWORD = "admin1234";
+    private static String ADMIN_PASSWORD = "admin1234"; // will override if file exists
 
     @javafx.fxml.FXML
     public void initialize() {
+
+        // -------- Load Admin password from file if exists --------
+        String savedAdminPassword = readAdminPassword();
+        if (savedAdminPassword != null && !savedAdminPassword.isEmpty()) {
+            ADMIN_PASSWORD = savedAdminPassword;
+        }
 
         // -------- Add NGO Admin to ComboBox --------
         userTypeCB.getItems().add(ADMIN_NAME);
@@ -67,6 +72,28 @@ public class LoginController {
                 userTypeCB.getItems().add(c.getName());
                 companies.add(new Login(c.getEmail(), c.getPassword(), c.getName()));
             }
+        }
+
+        // -------- Override demo company passwords from DPassword.bin --------
+        ArrayList<DemoPassword> demoPasswords = readDemoPasswords();
+        for (Login c : companies) {
+            for (DemoPassword dp : demoPasswords) {
+                if (c.getCompanyName().equalsIgnoreCase(dp.getCompanyName())) {
+                    c.setPassword(dp.getPassword());
+                }
+            }
+        }
+    }
+
+    // ----------------- Read Admin password -----------------
+    private String readAdminPassword() {
+        File file = new File(A_PASSWORD_FILE);
+        if (!file.exists()) return null;
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+            return (String) ois.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 
@@ -108,19 +135,27 @@ public class LoginController {
             }
         }
 
-        // -------- COMPANY LOGIN (RESTRICTED) --------
+        // -------- COMPANY LOGIN (demo + real) --------
         for (Login company : companies) {
             if (company.getEmail().equals(email)
                     && company.getPassword().equals(password)
                     && company.getCompanyName().equals(selectedUser)) {
 
-                showAlert(Alert.AlertType.ERROR,
-                        "Access Restricted",
-                        "You cannot access this option.\nOnly NGO Admin can access.");
+                loggedInCompany = company.getCompanyName(); // save for reference
+
+                showAlert(Alert.AlertType.INFORMATION,
+                        "Login Successful",
+                        "Welcome " + loggedInCompany);
+
+                switchTo(
+                        "/alif/ngodonationmanagementsoftware/CompanyDashboard.fxml",
+                        actionEvent
+                );
                 return;
             }
         }
 
+        // -------- LOGIN FAILED --------
         showAlert(Alert.AlertType.ERROR,
                 "Login Failed",
                 "Invalid email, password, or company selection!");
@@ -157,6 +192,18 @@ public class LoginController {
         }
     }
 
+    // -------- Read demo passwords from DPassword.bin --------
+    private ArrayList<DemoPassword> readDemoPasswords() {
+        File file = new File(D_PASSWORD_FILE);
+        if (!file.exists()) return new ArrayList<>();
+        try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(file))) {
+            return (ArrayList<DemoPassword>) ois.readObject();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
+
     // ---------------- ALERT HELPER ----------------
     private void showAlert(Alert.AlertType type, String title, String msg) {
         Alert alert = new Alert(type);
@@ -166,5 +213,3 @@ public class LoginController {
         alert.showAndWait();
     }
 }
-
-

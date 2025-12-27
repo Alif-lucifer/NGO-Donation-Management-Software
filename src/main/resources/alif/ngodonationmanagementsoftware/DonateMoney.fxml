@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefWidth="600" prefHeight="420"
+            xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="alif.ngodonationmanagementsoftware.DonateMoneyController">
+
+    <children>
+
+        <Label text="Donate Money"
+               layoutX="220" layoutY="20">
+            <font>
+                <Font size="22"/>
+            </font>
+        </Label>
+
+        <Label text="Company:"
+               layoutX="120" layoutY="80"/>
+
+        <Label fx:id="companyNameLabel"
+               layoutX="220" layoutY="80"
+               style="-fx-font-weight: bold;"/>
+
+        <Label text="Donation Amount:"
+               layoutX="120" layoutY="130"/>
+
+        <TextField fx:id="amountField"
+                   layoutX="220" layoutY="125"
+                   prefWidth="200"/>
+
+        <Label text="Payment Method:"
+               layoutX="120" layoutY="180"/>
+
+        <ComboBox fx:id="paymentMethodCB"
+                  layoutX="220" layoutY="175"
+                  prefWidth="200"/>
+
+        <Button text="Donate"
+                layoutX="220" layoutY="235"
+                prefWidth="200"
+                onAction="#donateButtonClicked"/>
+
+        <Button text="Download Receipt"
+                layoutX="220" layoutY="285"
+                prefWidth="200"
+                onAction="#downloadReceiptButtonClicked"/>
+
+        <Button text="Back"
+                layoutX="220" layoutY="335"
+                prefWidth="200"
+                onAction="#backToDashboard"/>
+
+    </children>
+</AnchorPane>
+
