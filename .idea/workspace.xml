@@ -4,39 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="dbe64569-f9d7-41a1-8194-05896940e5c4" name="Changes" comment="NGO Admin works done">
-      <change afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/CompanyProfile.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/CompanyProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/DemoPassword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/DonateMoney.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/DonateMoneyController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/DonationHistory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/DonationHistoryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/PasswordChange.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/PasswordChangeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/CompanyProfile.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/DonateMoney.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/DonationHistory.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/PasswordChange.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/companies.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/company_details.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/forget_password_requests.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/non_donating_companies.bin" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/CheckTotalDonationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/CheckTotalDonationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/CompanyDashboardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/CompanyDashboardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/CompanyDetailsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/CompanyDetailsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/Login.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/Login.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/NewCompany.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/NewCompany.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/NonDonatingCompaniesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/NonDonatingCompaniesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/forgetPasswordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/alif/ngodonationmanagementsoftware/forgetPasswordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/CompanyDashboard.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/CompanyDashboard.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/CompanyDetails.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/CompanyDetails.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/forgetPassword.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/forgetPassword.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/alif/ngodonationmanagementsoftware/login.fxml" afterDir="false" />
-    </list>
+    <list default="true" id="dbe64569-f9d7-41a1-8194-05896940e5c4" name="Changes" comment="NGO full work done" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +99,7 @@
       <workItem from="1766554987588" duration="1551000" />
       <workItem from="1766822135583" duration="28493000" />
       <workItem from="1766860819057" duration="812000" />
-      <workItem from="1766861900922" duration="13295000" />
+      <workItem from="1766861900922" duration="13533000" />
     </task>
     <task id="LOCAL-00001" summary="Hello">
       <option name="closed" value="true" />
@@ -149,7 +117,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766838692813</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="NGO full work done">
+      <option name="closed" value="true" />
+      <created>1766875375015</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1766875375015</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -185,6 +161,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Hello" />
     <MESSAGE value="NGO Admin works done" />
-    <option name="LAST_COMMIT_MESSAGE" value="NGO Admin works done" />
+    <MESSAGE value="NGO full work done" />
+    <option name="LAST_COMMIT_MESSAGE" value="NGO full work done" />
   </component>
 </project>
